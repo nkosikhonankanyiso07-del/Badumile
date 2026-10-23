@@ -1,28 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Badumile - Adaptive AI</title>
+<title>Badumile - South Africa's First Adaptive AI</title>
 <style>
-body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center;padding:20px}
-h1{font-size:70px;background:linear-gradient(90deg,#00d4ff,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:30px 0}
-.box{background:#111;border:1px solid #00d4ff;padding:30px;border-radius:20px;max-width:700px;margin:20px auto}
-.btn{background:#00d4ff;color:#000;padding:15px 30px;border:none;border-radius:30px;font-weight:bold;font-size:18px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+header{padding:20px;text-align:center;border-bottom:1px solid #111}
+h1{font-size:48px;background:linear-gradient(90deg,#00d4ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900;letter-spacing:2px}
+.subtitle{color:#00d4ff;letter-spacing:3px;font-size:12px;margin-top:8px}
+.creator{color:#666;font-size:12px;margin-top:4px}
+.chat-container{flex:1;max-width:800px;width:100%;margin:0 auto;display:flex;flex-direction:column;padding:20px}
+.messages{flex:1;overflow-y:auto;padding:10px 0;display:flex;flex-direction:column;gap:14px;max-height:60vh}
+.msg{max-width:80%;padding:14px 18px;border-radius:18px;line-height:1.5;font-size:15px}
+.user{align-self:flex-end;background:#00d4ff;color:#000;border-bottom-right-radius:4px}
+.bot{align-self:flex-start;background:#111;border:1px solid #222;border-bottom-left-radius:4px}
+.input-area{display:flex;gap:10px;margin-top:20px;background:#111;padding:12px;border-radius:30px;border:1px solid #222}
+input{flex:1;background:transparent;border:none;color:#fff;outline:none;font-size:16px;padding:0 10px}
+button.send{background:#00d4ff;color:#000;border:none;width:46px;height:46px;border-radius:50%;font-weight:bold;cursor:pointer}
+.hint{color:#444;font-size:11px;text-align:center;margin-top:12px}
+.badge{display:inline-block;background:#111;border:1px solid #00d4ff;color:#00d4ff;padding:4px 10px;border-radius:20px;font-size:10px;margin-bottom:10px}
 </style>
 </head>
 <body>
+<header>
 <h1>BADUMILE</h1>
-<p style="color:#00d4ff;letter-spacing:3px">SOUTH AFRICA'S FIRST ADAPTIVE AI - CHAMELEON MODE</p>
-<p>Created by Nkanyiso Mabaso - Durban, KZN</p>
-<div class="box">
-<h2>🤖 What is Badumile?</h2>
-<p>Badumile is the first Chameleon AI. She adapts to YOU.</p>
-<p><b>UmZulu?</b> "Yebo Nkunzi! Kuhle kudala..."</p>
-<p><b>English?</b> "Hello! Let's get your business sorted."</p>
-<p>ChatGPT speaks same to everyone. <b>Badumile mirrors YOU.</b></p>
-<br><button class="btn">Try Badumile AI</button>
+<div class="subtitle">SOUTH AFRICA'S FIRST ADAPTIVE AI - CHAMELEON MODE</div>
+<div class="creator">Created by Nkanyiso Mabaso - Durban, KZN | 0791814411</div>
+</header>
+<div class="chat-container">
+<div class="messages" id="messages">
+<div class="msg bot"><span class="badge">CHAMELEON ACTIVE</span><br>Sawubona Nkunzi! Ngingu Badumile. The first AI that adapts to YOU.<br><br>Bhala ngo Zulu noma English - ngizokufanela wena. Try me!</div>
 </div>
-<p style="color:#444;margin-top:50px">© 2026 Badumile AI - Built in Durban</p>
+<div class="input-area">
+<input id="input" placeholder="Bhala lapha... / Type here..." onkeypress="if(event.key==='Enter')send()">
+<button class="send" onclick="send()">↑</button>
+</div>
+<div class="hint">Badumile mirrors your language & vibe. Zulu → Zulu. English → English.</div>
+</div>
+<script>
+const zuluWords=['sawubona','yebo','njani','kunjani','ngiyabonga','nkunzi','yini','kahle','kakhulu','uhlala','kuphi','ngubani','badumile','awu','eish','sharp','majita','heita','ngicela','mina','wena','khona','manje','hawu','bhuti','sisi'];
+function isZulu(t){let l=t.toLowerCase();return zuluWords.some(w=>l.includes(w));}
+function getResponse(text){
+let lower=text.toLowerCase();
+if(lower.includes('who are you')||lower.includes('ungubani')){return isZulu(text)?"Mina ngingu Badumile Nkunzi! AI yokuqala yase South Africa e-adaptayo. ChatGPT ikhuluma ngendlela efanayo kubo bonke. Mina ngikubuka WENA - uma ukhuluma isiZulu ngikhuluma isiZulu! Ngidalwe ngu Nkanyiso Mabaso eThekwini!":"I am Badumile! South Africa's FIRST adaptive AI. I mirror YOU. You speak Zulu, I speak Zulu. You speak business, I speak business. Created by Nkanyiso Mabaso in Durban!";}
+if(isZulu(text)){const z=["Yebo Nkunzi! Ngiyezwa kahle! Kuhle kudala singabonani! Uthi yini ngale ndaba? Ngiku Chameleon Mode!","Sharp Majita! Ngiyabona ukhuluma isiZulu - nami ngizokhuluma isiZulu! Yilokhu okwenza mina ngihluke ku ChatGPT.","Awu Nkunzi, uyabona-ke! Uma ukhuluma nami ngesiZulu, ngikuphendula ngesiZulu. Ngingu Chameleon AI!"];return z[Math.floor(Math.random()*z.length)];}
+else{const e=["I see you! That's Chameleon Mode - I adapt to YOU. You type in English, I respond in English. You type Zulu, I switch to Zulu. I'm Badumile - built in Durban!","Sharp! You caught the magic! I'm mirroring your vibe. Business English? I give you business. That's why Badumile is different!","Exactly Nkunzi! That's the power - I don't speak AT you, I speak LIKE you. Zulu customers feel at home. More connection = more business!"];return e[Math.floor(Math.random()*e.length)];}
+}
+function send(){let input=document.getElementById('input');let text=input.value.trim();if(!text)return;let m=document.getElementById('messages');m.innerHTML+=`<div class="msg user">${text}</div>`;input.value='';m.scrollTop=m.scrollHeight;setTimeout(()=>{let r=getResponse(text);m.innerHTML+=`<div class="msg bot">${r}</div>`;m.scrollTop=m.scrollHeight;},600);}
+</script>
 </body>
 </html>
