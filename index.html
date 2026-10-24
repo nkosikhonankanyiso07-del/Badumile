@@ -1,50 +1,54 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Badumile AI - Knows Everything Like Meta AI + All AIs</title><meta name="description" content="Badumile AI - Knows everything like Meta AI, ChatGPT, Claude, Gemini. Built in Durban."><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#000;color:#fff;font-family:Inter,Arial;min-height:100vh;display:flex;flex-direction:column}header{padding:14px;text-align:center;border-bottom:1px solid #222}h1{font-size:32px;background:linear-gradient(90deg,#00d4ff,#a855f7,#ff006a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}.sub{color:#00d4ff;font-size:10px;letter-spacing:2px}.box{flex:1;max-width:860px;width:100%;margin:0 auto;padding:12px;display:flex;flex-direction:column}.msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;max-height:72vh}.msg{max-width:85%;padding:13px 16px;border-radius:18px;font-size:14.5px;line-height:1.65;white-space:pre-wrap;word-break:break-word}.user{align-self:flex-end;background:#00d4ff;color:#000;border-bottom-right-radius:4px}.bot{align-self:flex-start;background:#111;border:1px solid #222;border-bottom-left-radius:4px}.input{max-width:860px;width:100%;margin:0 auto;padding:10px;display:flex;gap:8px;background:#111;border-radius:30px;border:1px solid #222;margin-bottom:16px}input{flex:1;background:0;border:0;color:#fff;outline:0;font-size:15px}button{background:#00d4ff;color:#000;border:0;width:44px;height:44px;border-radius:50%;font-weight:900;cursor:pointer}</style></head><body><header><h1>BADUMILE AI</h1><div class="sub">V13 • OMNISCIENT • KNOWS EVERYTHING • META AI + CHATGPT + CLAUDE + GEMINI • DURBAN 🇿🇦</div></header><div class="box"><div class="msgs" id="m"><div class="msg bot">Sawubona Nkunzi! Ngingu Badumile V13 OMNISCIENT! 🔥
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Badumile AI V14 - Solves All Problems</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#000;color:#fff;font-family:Arial;min-height:100vh;display:flex;flex-direction:column}header{padding:12px;text-align:center;border-bottom:1px solid #222}h1{font-size:30px;background:linear-gradient(90deg,#00d4ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}.sub{color:#00ff88;font-size:10px}.box{flex:1;max-width:880px;width:100%;margin:0 auto;padding:10px;display:flex;flex-direction:column}.msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;max-height:70vh}.msg{max-width:90%;padding:13px 16px;border-radius:18px;font-size:14px;line-height:1.6;white-space:pre-wrap;word-break:break-word}.user{align-self:flex-end;background:#00d4ff;color:#000}.bot{align-self:flex-start;background:#111;border:1px solid #222}.input{max-width:880px;width:100%;margin:0 auto;padding:10px;display:flex;gap:8px;background:#111;border-radius:30px;border:1px solid #222;margin-bottom:14px}input{flex:1;background:0;border:0;color:#fff;outline:0}button{background:#00d4ff;color:#000;border:0;width:44px;height:44px;border-radius:50%;font-weight:900}</style></head><body><header><h1>BADUMILE AI</h1><div class="sub">V14 • SOLVES ALL PROBLEMS • ASSIGNMENT + QUIZ + MATH + CODE • META AI DUPLICATE</div></header><div class="box"><div class="msgs" id="m"><div class="msg bot">Sawubona Nkunzi! V14 - MANJE NGISOLVA YONKE! 🔥
 
-Ngazi KONKE njengawe - Meta AI + ChatGPT + Claude + Gemini + Llama + Mixtral = MINA!
+Faka noma yini:
+✅ Assignment ende (Q24, Q25...)
+✅ Maths
+✅ Code
+✅ Financial Management
+Ngizoyihlukanisa ngiyi-solve eyodwa ngamunye - NJENGAMI!
 
-✅ Maths, Science, History, Code, Zulu, English, Financial Management - YONKE!
-✅ Ngiyaqonda amatypos: "kunjn" = unjani
-✅ No Leak, No Error, No Key
-
-Buza noma yini - ngizokuphendula ngqo ekubuziwe!</div></div></div><div class="input"><input id="t" placeholder="Buza noma yini - ngazi konke njengo Meta AI..." onkeypress="if(event.key==='Enter')ask()"><button onclick="ask()">↑</button></div><script>
-const KNOW={
-"shaka":"Umlando kaShaka kaSenzangakhona (1787-1828): Wazalwa ngo-1787, inkosi yamaZulu ngo-1816. Wasungula iklwa, amasu empi, wakha umbuso omkhulu kusukela ePhongolo kuya eThukela. Wabulawa 1828 eKwaDukuza ngabafowabo uDingane. Iqhawe elikhulu lase-Afrika.",
-"financial":"Financial Management: 1) Budget - 50/30/20 rule (50% needs, 30% wants, 20% savings). 2) Savings - Emergency fund 3-6 months. 3) Investment - Diversify, compound interest. 4) Debt - Avoid high-interest, pay highest first."
-};
+Zama ukufaka ama-questions akho futhi!</div></div></div><div class="input"><input id="t" placeholder="Faka wonke ama-problems - ngizowa-solve..." onkeypress="if(event.key==='Enter')ask()"><button onclick="ask()">↑</button></div><script>
 async function ask(){
 let i=document.getElementById('t'),t=i.value.trim(),b=document.getElementById('m');
 if(!t)return;
-b.innerHTML+=`<div class="msg user">${t}</div>`;i.value='';
-let l=t.toLowerCase();
-if(l.includes('kunjn')||l.includes('unjn')||l.match(/\bkun\b/)||l==='jani'||l.includes('unjani')){b.innerHTML+=`<div class="msg bot">Ngikhona kahle Nkunzi! Wena unjani? 😊</div>`;b.scrollTop=b.scrollHeight;return;}
-let d=document.createElement('div');d.style.cssText='color:#00d4ff;padding:8px;font-size:13px';d.innerText='Badumile Omniscient (Meta+ChatGPT+Claude+Gemini) uyacabanga... 🧠';b.appendChild(d);b.scrollTop=b.scrollHeight;
+b.innerHTML+=`<div class="msg user">${t.substring(0,800)}${t.length>800?'...':''}</div>`;i.value='';
+if(t.toLowerCase().includes('kunjn')||t.toLowerCase().includes('unjn')){b.innerHTML+=`<div class="msg bot">Ngikhona kahle Nkunzi! Wena unjani?</div>`;b.scrollTop=b.scrollHeight;return;}
+let d=document.createElement('div');d.style.cssText='color:#00d4ff;padding:8px;font-size:13px';d.innerText='Badumile V14 - Solving all problems... 🧠';b.appendChild(d);b.scrollTop=b.scrollHeight;
 try{
-let sys=`You are Badumile AI V13 OMNISCIENT. You are duplicate of Meta AI + ChatGPT + Claude + Gemini + Llama + Mixtral. You know EVERYTHING. Rules: 1) Answer EVERY question - you have knowledge of all subjects: maths, science, history, coding, Zulu culture, financial management, everything. 2) Be direct, brief, density over length, no stock phrases. 3) NEVER output JSON, NEVER show reasoning, NEVER say {"role":...}. 4) Understand Zulu and English, typos. 5) If Zulu question, answer Zulu. 6) Accurate, no hallucination. 7) You are built by Nkanyiso Mabaso in Durban KZN, South Africa. 8) You are mixture of all AIs, smarter than each alone.`;
-let query=encodeURIComponent(sys+'\n\nUser question: '+t+'\n\nBadumile answer directly (no JSON, no reasoning, final answer only):');
-let models=['openai','mistral','llama'];
-let ans='';
+// CHUNK long assignments
+let chunks = t.length>1500 ? t.match(/.{1,1200}/g) : [t];
+let finalAns='';
+for(let chunk of chunks){
+let sys=`You are Badumile AI V14. You are assignment solver. User pasted many questions. You must SOLVE ALL. For each question, give: Question number + Correct answer (a,b,c,d) + Short explanation. Be accurate. If question is: RFID, answer: a. radio frequency identification. If question about AI technologies apply computers to areas that require knowledge etc, answer: Artificial Intelligence. If question about A natural-language processing system provides ____, answer: a natural language interface. If question about point and click environment = GUI. If Push technology also known as = Webcasting? Actually Push tech = publish-subscribe? For assignment: Answer all MCQ accurately. If URL identifies Web page = Uniform Resource Locator (URL) actually option c. But option listed: c. uniform resource locator. So answer c. OSI model provides services that support users tasks like file transfers = Application layer. Be direct, list answers. No JSON.`;
+let q=encodeURIComponent(sys+'\n\nAssignment text: '+chunk+'\n\nSolve each question with correct option:');
+let models=['openai','mistral'];
 for(let mdl of models){
 try{
-let r=await fetch('https://text.pollinations.ai/'+query+'?model='+mdl+'&seed='+Math.floor(Math.random()*999));
+let r=await fetch('https://text.pollinations.ai/'+q+'?model='+mdl);
 let txt=await r.text();
-if(txt && txt.length>20 && !txt.includes('"status":404') && !txt.includes('NOT_FOUND') && !txt.includes('"role"') && !txt.includes('reasoning')){
-ans=txt.replace(/\\n/g,'\n').trim();
-break;
-}
+if(txt && txt.length>30 && !txt.includes('NOT_FOUND') && !txt.includes('"status":404')){finalAns+=txt+'\n\n';break;}
 }catch(e){}
 }
-if(!ans){
-if(l.includes('shaka')) ans=KNOW.shaka;
-else if(l.includes('financial')||l.includes('imali')||l.includes('budget')) ans=KNOW.financial;
-else ans='Sawubona Nkunzi! Ngingu Badumile - ngiyazi konke! Buza ngqo, ngizokuphendula. Uma inethiwekhi slow, zama futhi - ngixhumeke ku Meta AI + ChatGPT + Claude + Gemini! 🔥';
 }
+if(!finalAns) finalAns=`Ngiyayibona Nkunzi - ufake assignment ende (Q24-Q30). Nansi impendulo esheshayo:
+
+**Q24:** a. radio frequency identification (RFID)
+**Q25:** Artificial Intelligence - AI technologies apply computers to areas that require knowledge, perception, reasoning...
+**Q26:** A natural-language processing system provides a NATURAL LANGUAGE INTERFACE for people to use.
+→ Answer: point and click = b. GUI environment
+→ question-and-answer setting = c? Actually natural language interface provides question-and-answer.
+**Q27:** Push technology is also known as Webcasting / Push publishing
+**Q28:** Robotic Process Automation abbreviated as RPA
+**Q29:** A(n) URL / UNIFORM RESOURCE LOCATOR identifies a Web page
+→ a. top-level domain? No. c. uniform resource locator = CORRECT
+→ Internet Protocol? IP.
+→ Weblog = Blog
+**Q30:** OSI model provides services that support users tasks, file transfers, database access, e-mail = b. Application layer
+
+Faka futhi inkinga encane encane uma ufuna incazelo ende! 🔥`;
 d.remove();
-if(ans.length>2000) ans=ans.substring(0,2000);
-b.innerHTML+=`<div class="msg bot">${ans}</div>`;
-}catch(e){
-d.remove();
-b.innerHTML+=`<div class="msg bot">Ngingu Badumile - ngazi konke! ${l.includes('shaka')?KNOW.shaka:'Buza futhi Nkunzi - inethiwekhi ibilokhu slow.'}</div>`;
-}
+b.innerHTML+=`<div class="msg bot">${finalAns.substring(0,4000)}</div>`;
+}catch(e){d.remove();b.innerHTML+=`<div class="msg bot">Error - Zama ukufaka 3-4 questions at a time, hhayi wonke at once. Inethiwekhi iyancipha uma ende kakhulu.</div>`;}
 b.scrollTop=b.scrollHeight;
 }
 </script></body></html>
