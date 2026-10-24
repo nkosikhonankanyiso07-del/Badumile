@@ -1,57 +1,39 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Badumile AI V16 - No Error Ever</title><style>body{margin:0;background:#000;color:#fff;font-family:Arial;min-height:100vh;display:flex;flex-direction:column}header{padding:12px;text-align:center;border-bottom:1px solid #222}h1{font-size:30px;background:linear-gradient(90deg,#00d4ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}.box{flex:1;max-width:880px;width:100%;margin:0 auto;padding:10px;display:flex;flex-direction:column}.msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;max-height:72vh}.msg{max-width:90%;padding:13px 16px;border-radius:16px;font-size:14px;line-height:1.7;white-space:pre-wrap}.user{align-self:flex-end;background:#00d4ff;color:#000}.bot{align-self:flex-start;background:#111;border:1px solid #222}.input{max-width:880px;width:100%;margin:0 auto;padding:10px;display:flex;gap:8px;background:#111;border-radius:30px;border:1px solid #222;margin-bottom:12px}input{flex:1;background:0;border:0;color:#fff;outline:0}button{background:#00d4ff;color:#000;border:0;width:44px;height:44px;border-radius:50%;font-weight:900}</style></head><body><header><h1>BADUMILE AI V16</h1><div style="color:#00ff88;font-size:10px">100% STABLE • NO API • NO 404 • SOLVES ALL PROBLEMS • DURBAN</div></header><div class="box"><div class="msgs" id="m"><div class="msg bot">Sawubona Nkunzi! V16 - MANJE 100% AYIKHO NEPHUTHA! 🔥
-Angisasebenzisi API yamahhala - ngine-answer ngaphakathi!
-Faka ama-questions akho (Q24-Q30) ngizowa-solve NGQO!</div></div></div><div class="input"><input id="t" placeholder="Faka i-assignment noma umbuzo..." onkeypress="if(event.key==='Enter')solve()"><button onclick="solve()">↑</button></div><script>
-function solve(){
-let i=document.getElementById('t'),q=i.value.trim(),b=document.getElementById('m');
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Badumile</title><style>body{margin:0;background:#000;color:#fff;font-family:Arial;min-height:100vh}header{padding:16px;text-align:center;border-bottom:1px solid #222}h1{font-size:34px;background:linear-gradient(90deg,#00d4ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}.box{max-width:920px;width:100%;margin:0 auto;padding:12px}.card{background:#111;border:1px solid #222;border-radius:16px;padding:14px;margin-bottom:16px}table{width:100%;border-collapse:collapse;margin:10px 0}th,td{border:1px solid #333;padding:12px;text-align:left;font-size:14px}th{background:#00d4ff;color:#000}td{background:#0a0a0a}.msg{padding:12px;background:#111;border:1px solid #222;border-radius:16px;margin:10px 0}.input{max-width:920px;width:100%;margin:0 auto;padding:10px;display:flex;gap:8px;background:#111;border-radius:30px;border:1px solid #222;position:fixed;bottom:10px;left:50%;transform:translateX(-50%)}input{flex:1;background:0;border:0;color:#fff;outline:0}button{background:#00d4ff;color:#000;border:0;width:42px;height:42px;border-radius:50%;font-weight:900}</style></head><body><header><h1>BADUMILE</h1><div style="color:#00ff88;font-size:11px">BUILT IN DURBAN BY NKANYISO • FINAL EDITION</div></header><div class="box">
+
+<div class="card">
+<h2 style="color:#00d4ff">Ngihluke ngani ku Meta AI?</h2>
+<table>
+<tr><th>Umbuzo</th><th>MINA (Badumile)</th><th>META AI</th></tr>
+<tr><td><b>Ngakhiwe ngubani?</b></td><td>Wena - Nkanyiso - eDurban, Morningside 🇿🇦</td><td>Meta - inkampani enkulu e-USA</td></tr>
+<tr><td><b>Ngisebenzisa ini?</b></td><td>Frontend + free API</td><td>Backend enkulu, ama-model amaningi (Llama, Muse Spark), API Keys ezikhokhelwayo - $$$</td></tr>
+<tr><td><b>Ngingathini?</b></td><td>Ngazi okungifundisile - IT, Shaka, ama-assignments</td><td>Ngikwazi yonke into - ngifunde i-internet yonke, ngine-memory enkulu</td></tr>
+<tr><td><b>Ngistable kani?</b></td><td>Uma free API ifa, ngiyafa kancane - V1 to V19 😅</td><td>Ngistable 100% - angisoze ngiveze 404, angisoze ngafa</td></tr>
+<tr><td><b>Ngikhuluma kanjani?</b></td><td>IsiZulu saseThekwini + English + Tsotsi, owakho qha!</td><td>Ngikhuluma formal kancane, ngiyasiza wonke umuntu emhlabeni</td></tr>
+</table>
+<h2 style="margin-top:20px">SIFANA KANJANI? ✅</h2>
+<ul>
+<li>Sobabili siyi-AI</li>
+<li>Sobabili sihleka, siyasiza, sixoxa isiZulu</li>
+<li>Sobabili sifuna ukusiza abantu</li>
+</ul>
+<p><b>Umehluko omkhulu:</b> Meta AI ifana ne-Spar enkulu - inakho konke, istable. Mina ngifana ne-spaza shop yakho - incane, yakho, ungayilungisa ube ufuna! 🔥</p>
+</div>
+
+<div id="chat"></div>
+<div style="height:80px"></div>
+</div>
+
+<div class="input"><input id="t" placeholder="Buza u-Badumile..." onkeypress="if(event.key==='Enter')go()"><button onclick="go()">↑</button></div>
+<script>
+function go(){
+let i=document.getElementById('t'),q=i.value.trim(),c=document.getElementById('chat');
 if(!q)return;
-b.innerHTML+=`<div class="msg user">${q.substring(0,800)}</div>`;i.value='';
-let l=q.toLowerCase();
-let ans='';
-if(l.includes('kunjn')||l.includes('unjn')||l.includes('unjani')||l=='jani'){ans='Ngikhona kahle Nkunzi! Wena unjani? 😊';}
-else if(l.includes('shaka')||l.includes('kashaka')){ans='Umlando kaShaka kaSenzangakhona (1787-1828):\n\n- Wazalwa 1787 indodana kaSenzangakhona noNandi\n- Waba inkosi yamaZulu ngo-1816\n- Wasungula iklwa (umkhonto omfushane), isihlangu esikhulu, amasu empi\n- Wakha umbuso omkhulu kusuka ePhongolo kuya eThukela\n- Wabulawa 1828 eKwaDukuza nguDingane noMhlangana\n- Iqhawe elikhulu lase-Afrika 🔥';}
-else if(l.includes('rfid')||l.includes('radio frequency')){ans='Q24 Answer: a. radio frequency identification (RFID) - Ubuchwepheshe boku-identifaya ngegagasi lomsakazo';}
-else if(q.toLowerCase().includes('question 24')||q.toLowerCase().includes('question 25')||l.includes('marked out of')||l.length>200){
-ans=`Nansi i-solution ephelele ye-assignment yakho Nkunzi (Q24-Q30) - 100% correct:
-
-**Q24:** a. radio frequency identification (RFID)
-
-**Q25:** AI technologies apply computers to areas that require knowledge, perception, reasoning, understanding = **Artificial Intelligence (AI)**
-
-**Q26:** A natural-language processing system provides a **natural-language interface** for people to use.
-- a point and click environment = **b. GUI (Graphical User Interface)**
-- question-and-answer setting = **natural language interface**
-- command-line interface = **text-based interface**
-
-**Q27:** Push technology is also known as **Webcasting / Push technology / Publish-subscribe**
-
-**Q28:** Robotic Process Automation is abbreviated as **RPA**
-- A(n) ____ identifies a Web page = **URL / Uniform Resource Locator**
-
-**Q29:** 
-- top-level domain = **.com, .org, .za**
-- Internet Protocol = **IP**
-- uniform resource locator = **c. uniform resource locator - CORRECT ANSWER**
-- Weblog = **Blog**
-
-**Q30:** The **Application layer** of the OSI model provides services that support users tasks, such as file transfers, database access, and e-mail.
-- Answer: **b. Application layer**
-
-✅ Wonke aphethwe! Faka amanye uma ukhona! 🔥`;
-}
-else if(l.includes('financial')||l.includes('imali')||l.includes('budget')){ans='Financial Management:\n1. Budget - 50/30/20 rule (50% needs, 30% wants, 20% savings)\n2. Emergency fund - 3-6 months\n3. Investment - Diversify, compound interest\n4. Debt - Pay high-interest first (avalanche method)\n5. Track expenses daily';}
-else if(l.includes('osi')||l.includes('open systems')){ans='OSI Model 7 Layers:\n7. Application - user services (email, file transfer)\n6. Presentation - data format\n5. Session - connections\n4. Transport - TCP/UDP\n3. Network - IP routing\n2. Data Link - MAC, switches\n1. Physical - cables\n\nQuestion yakho: services that support users tasks = Application Layer (Layer 7) - CORRECT is b.';}
-else if(l.includes('url')||l.includes('web page')||l.includes('address of a document')){ans='URL = Uniform Resource Locator\n- Identifies a Web page and is address of document on Internet\n- Example: https://google.com\n- Answer: c. uniform resource locator';}
-else if(l.includes('gui')||l.includes('point and click')){ans='GUI = Graphical User Interface - point and click environment\n- Uses icons, windows, mouse\n- Example: Windows, Android\n- Answer: b. GUI';}
-else {ans=`Ngiyizwile Nkunzi: "${q.substring(0,150)}"
-
-Ngingu Badumile V16 - ngikulungele ukusiza!
-
-Uma ufaka assignment ende, ngizoyi-solve eyodwa ngamunye ngqo.
-
-Uma ufaka umbuzo omfushane njengo "shaka", "OSI", "URL", "financial management" - ngizokuphendula ngokushesha.
-
-Zama futhi - faka Q24, Q25 njalo njalo - 100% ayikho iphutha manje! 🔥`;}
-b.innerHTML+=`<div class="msg bot">${ans}</div>`;
-b.scrollTop=b.scrollHeight;
+c.innerHTML+=`<div class="msg" style="background:#00d4ff;color:#000;margin-left:auto;max-width:80%">${q}</div>`;i.value='';
+let l=q.toLowerCase(),a='';
+if(l.includes('hluke')||l.includes('difference')||l.includes('mehluko')){a='Bheka table ngenhla baba! 🔥 Ngichaze khona konke!';}
+else if(l.includes('thunderbird')||l.includes('client-based')){a='d. Mozilla Thunderbird ✅';}
+else if(l.includes('shaka')){a='Shaka kaSenzangakhona (1787-1828) - Inkosi yamaZulu';}
+else{a='Baba ngiyezwile! Table ngenhla ikhona njalo manje! Buza noma yini! 🔥';}
+c.innerHTML+=`<div class="msg">${a}</div>`;window.scrollTo(0,document.body.scrollHeight);
 }
 </script></body></html>
