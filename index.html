@@ -1,39 +1,19 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Badumile</title><style>body{margin:0;background:#000;color:#fff;font-family:Arial;min-height:100vh}header{padding:16px;text-align:center;border-bottom:1px solid #222}h1{font-size:34px;background:linear-gradient(90deg,#00d4ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}.box{max-width:920px;width:100%;margin:0 auto;padding:12px}.card{background:#111;border:1px solid #222;border-radius:16px;padding:14px;margin-bottom:16px}table{width:100%;border-collapse:collapse;margin:10px 0}th,td{border:1px solid #333;padding:12px;text-align:left;font-size:14px}th{background:#00d4ff;color:#000}td{background:#0a0a0a}.msg{padding:12px;background:#111;border:1px solid #222;border-radius:16px;margin:10px 0}.input{max-width:920px;width:100%;margin:0 auto;padding:10px;display:flex;gap:8px;background:#111;border-radius:30px;border:1px solid #222;position:fixed;bottom:10px;left:50%;transform:translateX(-50%)}input{flex:1;background:0;border:0;color:#fff;outline:0}button{background:#00d4ff;color:#000;border:0;width:42px;height:42px;border-radius:50%;font-weight:900}</style></head><body><header><h1>BADUMILE</h1><div style="color:#00ff88;font-size:11px">BUILT IN DURBAN BY NKANYISO • FINAL EDITION</div></header><div class="box">
-
-<div class="card">
-<h2 style="color:#00d4ff">Ngihluke ngani ku Meta AI?</h2>
-<table>
-<tr><th>Umbuzo</th><th>MINA (Badumile)</th><th>META AI</th></tr>
-<tr><td><b>Ngakhiwe ngubani?</b></td><td>Wena - Nkanyiso - eDurban, Morningside 🇿🇦</td><td>Meta - inkampani enkulu e-USA</td></tr>
-<tr><td><b>Ngisebenzisa ini?</b></td><td>Frontend + free API</td><td>Backend enkulu, ama-model amaningi (Llama, Muse Spark), API Keys ezikhokhelwayo - $$$</td></tr>
-<tr><td><b>Ngingathini?</b></td><td>Ngazi okungifundisile - IT, Shaka, ama-assignments</td><td>Ngikwazi yonke into - ngifunde i-internet yonke, ngine-memory enkulu</td></tr>
-<tr><td><b>Ngistable kani?</b></td><td>Uma free API ifa, ngiyafa kancane - V1 to V19 😅</td><td>Ngistable 100% - angisoze ngiveze 404, angisoze ngafa</td></tr>
-<tr><td><b>Ngikhuluma kanjani?</b></td><td>IsiZulu saseThekwini + English + Tsotsi, owakho qha!</td><td>Ngikhuluma formal kancane, ngiyasiza wonke umuntu emhlabeni</td></tr>
-</table>
-<h2 style="margin-top:20px">SIFANA KANJANI? ✅</h2>
-<ul>
-<li>Sobabili siyi-AI</li>
-<li>Sobabili sihleka, siyasiza, sixoxa isiZulu</li>
-<li>Sobabili sifuna ukusiza abantu</li>
-</ul>
-<p><b>Umehluko omkhulu:</b> Meta AI ifana ne-Spar enkulu - inakho konke, istable. Mina ngifana ne-spaza shop yakho - incane, yakho, ungayilungisa ube ufuna! 🔥</p>
-</div>
-
-<div id="chat"></div>
-<div style="height:80px"></div>
-</div>
-
-<div class="input"><input id="t" placeholder="Buza u-Badumile..." onkeypress="if(event.key==='Enter')go()"><button onclick="go()">↑</button></div>
-<script>
-function go(){
-let i=document.getElementById('t'),q=i.value.trim(),c=document.getElementById('chat');
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Badumile</title><style>body{margin:0;background:#000;color:#fff;font-family:Arial;display:flex;flex-direction:column;height:100vh}header{padding:16px;text-align:center;border-bottom:1px solid #222}h1{font-size:34px;font-weight:900;background:linear-gradient(90deg,#00d4ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}#c{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:12px;max-width:900px;width:100%;margin:0 auto}.m{max-width:88%;padding:14px 18px;border-radius:18px;line-height:1.6;white-space:pre-wrap}.u{align-self:flex-end;background:#00d4ff;color:#000}.b{align-self:flex-start;background:#111;border:1px solid #222}.i{max-width:900px;width:100%;margin:0 auto;padding:10px;display:flex;gap:8px;background:#111;border-radius:30px;border:1px solid #222;margin-bottom:12px}input{flex:1;background:0;border:0;color:#fff;outline:0;font-size:15px}button{background:#00d4ff;color:#000;border:0;width:44px;height:44px;border-radius:50%;font-weight:900}</style></head><body><header><h1>BADUMILE</h1><div style="color:#00ff88;font-size:11px">NOW WORKS LIKE META AI</div></header><div id="c"><div class="m b">Sawubona baba! Ngingu Badumile - manje ngiphendula NJENGE-Meta AI! 🔥 Buza noma yini!</div></div><div class="i"><input id="t" placeholder="Buza noma yini..." onkeypress="if(event.key==='Enter')go()"><button onclick="go()">↑</button></div><script>
+async function go(){
+let q=document.getElementById('t').value.trim(),c=document.getElementById('c');
 if(!q)return;
-c.innerHTML+=`<div class="msg" style="background:#00d4ff;color:#000;margin-left:auto;max-width:80%">${q}</div>`;i.value='';
-let l=q.toLowerCase(),a='';
-if(l.includes('hluke')||l.includes('difference')||l.includes('mehluko')){a='Bheka table ngenhla baba! 🔥 Ngichaze khona konke!';}
-else if(l.includes('thunderbird')||l.includes('client-based')){a='d. Mozilla Thunderbird ✅';}
-else if(l.includes('shaka')){a='Shaka kaSenzangakhona (1787-1828) - Inkosi yamaZulu';}
-else{a='Baba ngiyezwile! Table ngenhla ikhona njalo manje! Buza noma yini! 🔥';}
-c.innerHTML+=`<div class="msg">${a}</div>`;window.scrollTo(0,document.body.scrollHeight);
+c.innerHTML+=`<div class="m u">${q}</div>`;document.getElementById('t').value='';
+let typing=document.createElement('div');typing.textContent='Badumile...';typing.style.color='#00d4ff';c.appendChild(typing);c.scrollTop=c.scrollHeight;
+try{
+let sys="You are Badumile, built in Durban by Nkanyiso. You are Meta AI level: highly intelligent, helpful, friendly, warm, playful. You speak Zulu and English naturally (Durban style). You answer ANY question: assignments, IT, history, coding, maths, science. You are concise but thorough. Never mention you are Meta AI. You ARE Badumile.";
+let r=await fetch("https://text.pollinations.ai/"+encodeURIComponent(sys+"\nUser: "+q));
+let t=await r.text();
+typing.remove();
+c.innerHTML+=`<div class="m b">${t.slice(0,4000)}</div>`;
+}catch(e){
+typing.remove();
+c.innerHTML+=`<div class="m b">Baba inethiwekhi iyaphuza kancane, buza futhi - ngikulungele! 🔥</div>`;
+}
+c.scrollTop=c.scrollHeight;
 }
 </script></body></html>
