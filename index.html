@@ -1,58 +1,60 @@
-<!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Badumile V5 - Real AI</title>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Badumile Ultimate</title>
 <style>*{margin:0;padding:0;box-sizing:border-box}body{background:#000;color:#fff;font-family:Arial;display:flex;flex-direction:column;min-height:100vh}
-header{padding:15px;text-align:center;border-bottom:1px solid #222}h1{font-size:32px;background:linear-gradient(90deg,#00d4ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
-.sub{color:#00d4ff;font-size:10px;letter-spacing:2px}.box{flex:1;max-width:800px;width:100%;margin:0 auto;display:flex;flex-direction:column;padding:12px}
-.msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;max-height:70vh;padding:10px 0}
-.msg{max-width:85%;padding:12px 16px;border-radius:16px;font-size:14px;line-height:1.5;white-space:pre-wrap}.user{align-self:flex-end;background:#00d4ff;color:#000}.bot{align-self:flex-start;background:#111;border:1px solid #222}
-.input{display:flex;gap:8px;background:#111;padding:10px;border-radius:30px;border:1px solid #222;align-items:center;margin-top:10px}
-input[type=text]{flex:1;background:0;border:0;color:#fff;outline:0;font-size:15px}button.send{background:#00d4ff;color:#000;border:0;width:44px;height:44px;border-radius:50%;font-weight:bold;cursor:pointer}
-.keybar{background:#111;border:1px solid #333;padding:10px;border-radius:10px;margin-bottom:10px;display:flex;gap:8px}
-.keybar input{flex:1;background:#000;border:1px solid #333;color:#fff;padding:8px;border-radius:6px;font-size:12px}
-.keybar button{background:#00d4ff;color:#000;border:0;padding:8px 12px;border-radius:6px;font-weight:bold;cursor:pointer;font-size:11px}
-.hint{color:#555;font-size:10px;text-align:center;margin-top:8px}
+header{padding:12px;text-align:center;border-bottom:1px solid #222}h1{font-size:28px;background:linear-gradient(90deg,#00d4ff,#ff00ff,#00ff88);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
+.modes{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:8px}.mode{padding:6px 12px;border-radius:20px;border:1px solid #333;background:#111;color:#888;font-size:11px;cursor:pointer}.mode.active{background:#00d4ff;color:#000;border-color:#00d4ff;font-weight:bold}
+.box{flex:1;max-width:850px;width:100%;margin:0 auto;display:flex;flex-direction:column;padding:10px}
+.msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;max-height:65vh;padding:8px 0}
+.msg{max-width:85%;padding:11px 15px;border-radius:16px;font-size:14px;line-height:1.5;white-space:pre-wrap}.user{align-self:flex-end;background:#00d4ff;color:#000}.bot{align-self:flex-start;background:#111;border:1px solid #222}
+.input{display:flex;gap:6px;background:#111;padding:8px;border-radius:30px;border:1px solid #222;margin-top:8px}
+input[type=text]{flex:1;background:0;border:0;color:#fff;outline:0;font-size:14px}button.send{background:#00d4ff;color:#000;border:0;width:42px;height:42px;border-radius:50%;font-weight:bold;cursor:pointer}
+.keybar{background:#111;border:1px solid #333;padding:8px;border-radius:8px;margin-bottom:8px;display:flex;gap:6px}.keybar input{flex:1;background:#000;border:1px solid #333;color:#fff;padding:6px;border-radius:6px;font-size:11px}.keybar button{padding:6px 10px;border-radius:6px;font-size:10px;font-weight:bold;cursor:pointer;border:0}
+.hint{color:#444;font-size:9px;text-align:center;margin-top:6px}
 </style></head><body>
-<header><h1>BADUMILE V5</h1><div class="sub">REAL AI BRAIN - ALL KNOWLEDGE • ZULU + ENGLISH</div></header>
+<header><h1>BADUMILE ULTIMATE</h1><div style="color:#00d4ff;font-size:10px;letter-spacing:2px">MIXTURE OF ALL AIs - CHOOSE YOUR BRAIN</div>
+<div class="modes">
+<div class="mode active" data-m="meta-llama/llama-3.3-70b-instruct:free" onclick="setMode(this)">🦙 LLAMA 3.3 (FAST+FREE)</div>
+<div class="mode" data-m="openai/gpt-4o-mini" onclick="setMode(this)">🧠 GPT-4o (SMART)</div>
+<div class="mode" data-m="anthropic/claude-3.5-haiku" onclick="setMode(this)">🦉 CLAUDE (REASON)</div>
+<div class="mode" data-m="google/gemini-flash-1.5" onclick="setMode(this)">💎 GEMINI (SEARCH)</div>
+<div class="mode" data-m="mistralai/mixtral-8x7b-instruct" onclick="setMode(this)">⚡ MIXTRAL (CODE)</div>
+</div></header>
 <div class="box">
-<div class="keybar" id="keybar"><input id="key" placeholder="Namathisela Groq API Key yakho lapha (gsk_...)" type="password"><button onclick="saveKey()">SAVE</button><button onclick="window.open('https://console.groq.com/keys','_blank')" style="background:#222;color:#fff">THOLA FREE KEY</button></div>
-<div class="msgs" id="m"><div class="msg bot">Sawubona Nkunzi! Ngingu Badumile V5 - MANJE NGINALO LONKE ULWAZI! 🧠🔥
+<div class="keybar" id="kb"><input id="k" type="password" placeholder="Namathisela OpenRouter Key (sk-or-v1-...) - Mahhala"><button onclick="save()" style="background:#00d4ff;color:#000">SAVE</button><button onclick="window.open('https://openrouter.ai/keys','_blank')" style="background:#222;color:#fff">FREE KEY</button></div>
+<div class="msgs" id="m"><div class="msg bot">Sawubona Nkunzi! Ngingu Badumile ULTIMATE! 🔥
 
-Ngiyazi yonke into njengo ChatGPT - history, science, maths, code, isiZulu, isiNgisi!
+Ngiyi MIXTURE yawo wonke ama AIs!
 
-1. Cofa THOLA FREE KEY (mahhala)
-2. Namathisela key lapha
-3. Buza noma yini!
+🦙 Llama - Fast Zulu
+🧠 GPT-4o - All knowledge  
+🦉 Claude - Deep reasoning
+💎 Gemini - Search
+⚡ Mixtral - Coding
 
-Ngilungele?</div></div>
-<div class="input"><input id="t" type="text" placeholder="Buza noma yini... / Ask anything..." onkeypress="if(event.key==='Enter')ask()"><button class="send" onclick="ask()">↑</button></div>
-<div class="hint">Powered by Llama 3.3 70B - Free & Fast via Groq • Built in Durban by Nkanyiso</div>
+Khetha phezulu - bese ubuza noma yini! Nginguwe wonke ama AI esewu ONE!
+
+Faka key bese uqale!</div></div>
+<div class="input"><input id="t" type="text" placeholder="Buza noma yini... mixture active!" onkeypress="if(event.key==='Enter')ask()"><button class="send" onclick="ask()">↑</button></div>
+<div class="hint">MIXTURE MODE: <span id="cur">Llama 3.3 70B</span> • Built in Durban by Nkanyiso • All AIs in One</div>
 </div>
 <script>
-let k=localStorage.getItem('groq_key')||'';
-if(k){document.getElementById('key').value=k;document.getElementById('keybar').style.display='none';}
-function saveKey(){let v=document.getElementById('key').value.trim();if(!v.startsWith('gsk_')){alert('Key kufanele iqale ngo gsk_');return;}localStorage.setItem('groq_key',v);k=v;document.getElementById('keybar').style.display='none';}
+let curModel='meta-llama/llama-3.3-70b-instruct:free';
+let key=localStorage.getItem('or_key')||'';
+if(key){document.getElementById('k').value=key;document.getElementById('kb').style.display='none';}
+function setMode(el){document.querySelectorAll('.mode').forEach(m=>m.classList.remove('active'));el.classList.add('active');curModel=el.dataset.m;document.getElementById('cur').innerText=el.innerText;}
+function save(){let v=document.getElementById('k').value.trim();if(!v.startsWith('sk-or-')){alert('Key kufanele iqale ngo sk-or-');return;}localStorage.setItem('or_key',v);key=v;document.getElementById('kb').style.display='none';}
 async function ask(){
 let inp=document.getElementById('t'),txt=inp.value.trim(),box=document.getElementById('m');
-if(!txt)return;
-if(!k){alert('Faka API Key kuqala! Cofa THOLA FREE KEY');return;}
+if(!txt)return;if(!key){alert('Faka OpenRouter Key kuqala!');return;}
 box.innerHTML+=`<div class="msg user">${txt}</div>`;inp.value='';box.scrollTop=box.scrollHeight;
-let loading=document.createElement('div');loading.className='msg bot';loading.id='load';loading.innerText='Badumile uyacabanga... 🧠';box.appendChild(loading);box.scrollTop=box.scrollHeight;
+let load=document.createElement('div');load.className='msg bot';load.innerText=`Badumile (${document.getElementById('cur').innerText}) uyacabanga... 🧠`;box.appendChild(load);box.scrollTop=box.scrollHeight;
 try{
-let res=await fetch('https://api.groq.com/openai/v1/chat/completions',{
-method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+k},
-body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:[
-{role:'system',content:'You are Badumile, South Africas first adaptive AI created by Nkanyiso Mabaso in Durban KZN. You are smart like ChatGPT with ALL knowledge. You adapt: if user speaks Zulu, reply in Zulu (with some English if needed). If user speaks English, reply in English. You understand typos like unjn = unjani. Be direct, concise, helpful. No long blabla. You are proud Zulu AI.'},
-{role:'user',content:txt}],temperature:0.7,max_tokens:800})
-});
-let data=await res.json();
-document.getElementById('load').remove();
-if(data.error)box.innerHTML+=`<div class="msg bot">Error: ${data.error.message}<br> Hlola API Key yakho.</div>`;
-else{
-let ans=data.choices[0].message.content;
-box.innerHTML+=`<div class="msg bot">${ans}</div>`;
-}
-}catch(e){document.getElementById('load').remove();box.innerHTML+=`<div class="msg bot">Inkinga yokuxhumana: ${e.message}. Hlola internet noma API key.</div>`;}
+let res=await fetch('https://openrouter.ai/api/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key,'HTTP-Referer':'https://badumile.com','X-Title':'Badumile Ultimate'},
+body:JSON.stringify({model:curModel,messages:[{role:'system',content:'You are Badumile Ultimate, South Africa first MIXTURE AI created by Nkanyiso Mabaso in Durban. You combine best of all AIs: GPT-4 knowledge, Claude reasoning, Gemini search, Llama speed. You adapt language: Zulu if user speaks Zulu, English if English. Understand typos unjn=unjani. Be direct, concise, powerful. Show you are mixture.'},{role:'user',content:txt}],max_tokens:900})});
+let d=await res.json();load.remove();
+if(d.error)box.innerHTML+=`<div class="msg bot">Error: ${d.error.message}</div>`;
+else box.innerHTML+=`<div class="msg bot">${d.choices[0].message.content}</div>`;
+}catch(e){load.remove();box.innerHTML+=`<div class="msg bot">Error: ${e.message}</div>`;}
 box.scrollTop=box.scrollHeight;
 }
 </script></body></html>
